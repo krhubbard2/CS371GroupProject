@@ -1,14 +1,38 @@
-
 <!DOCTYPE html>
 <html>
-<body style="background-color:BlanchedAlmond;">
 <head>
-<title>Budget Calculator</title>
-</head>
-<body>
+    <title>Budget Calculator</title>
+    <style type="text/css">
+        .demo{
+            display: flex;
+            border:solid 2px orange;
+        }
+        .demo-center{
+            justify-content:flex-start;
+        }
+        .demo-start{
+            justify-content:center;
+        }
+        .demo-end{
+            justify-content:flex-end;
+        }
+        .item{
+            background-color: cornflowerblue;
+            border: solid 1px black;
+            color: white;
+            padding: 20px;
+        }
+    </style>
 
-<h1>Budget Calculator</h1>
-<p>This is a paragraph.</p>
+</head>
+<body style="background-color:BlanchedAlmond;">
+    <h1>Budget Calculator</h1>
+    <div class="demo demo-center">
+        <div class="item" style="width:340px"><a href="Calculator.html" target="_self" rel="noopener noreferrer">Calculator</a></div>
+        <div class="item" style="width:340px"><a href="Analysis.html" target="_self" rel="noopener noreferrer">Analysis</a></div>
+        <div class="item" style="width:340px"><a href="Suggestions.html" target="_self" rel="noopener noreferrer">Suggestions</a></div>
+        <div class="item" style="width:340px"><a href="About Us.html" target="_self" rel="noopener noreferrer">About Us</a></div>
+    </div>
 
 </body>
 </html> 
