@@ -22,6 +22,9 @@
             color: white;
             padding: 20px;
         }
+        .startcalc{
+            display:none;
+        }
     </style>
 
 </head>
@@ -35,5 +38,23 @@
         <div class="item" style="width:340px"><a href="about_us.html" target="_self" rel="noopener noreferrer">About Us</a></div>
     </div>
 
+    <button onclick="start()">Start budget calculator</button>
+    <div class="startcalc" id="startcalc">
+        <h3>Please enter your income</h3>
+        <label for="salary">Salary/Wages</label>
+        <input type="text" placeholder="10,100,1000" id="salary" name="income">
+        <label for="salary">Other Income</label>
+        <input type="text" placeholder="10,100,1000" id="otherincome" name="income">
+    </div>
+    <script>
+        function start() {
+            let x = document.getElementById("startcalc");
+            if (x.style.display==="none") {
+                x.style.display="block";
+            } else {
+                x.style.display="none";
+            }
+        }
+    </script>
 </body>
 </html> 
