@@ -27,7 +27,7 @@
             padding: 20px;
         }
 
-        .startcalc {
+        .startcalc, .in, .out1  {
             display: none;
         }
     </style>
@@ -45,7 +45,8 @@
 
     <button onclick="start()">Start budget calculator</button>
     <div class="startcalc" id="startcalc">
-        <h3>Please enter your income</h3>
+
+        
         <div class="container" style="margin-top: 80px;">
     <div class="row">
     <div class="col-md-9">
@@ -56,11 +57,14 @@
     <div class="row">
         <div class="col-md-12" style="text-align: left">
             <div class="panel-body panel-app">
-
+                <button onclick="income()">Income</button>
+                <div class="in" id="in">
+                    
                 <form name="form1" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label class="col-sm-2 control-label"></label>
                         <div class="col-sm-10">
+                           
                             <strong>Income</strong>
                         </div>
                     </div>
@@ -93,8 +97,10 @@
                             <input id="cu3" input type="text" placeholder="10,100,1000" name="otherincome" class="form-control">
                         </div>
                     </div>
-
+                </div>
                     <br />
+                    <button onclick="expense()">Expense 1</button>
+                <div class="out1" id="out1">
                     <div class="form-group">
                         <label class="col-sm-2 control-label"></label>
                         <div class="col-sm-10"><strong>Expenses - Housing</strong></div>
@@ -199,7 +205,7 @@
                             <input id="cu14" input type="text" placeholder="10,100,1000" name="otherhousing" class="form-control">
                         </div>
                     </div>
-
+                    </div> <!--div for expense button-->
                     <br/>
                     <div class="form-group">
                         <label class="col-sm-2 control-label"></label>
@@ -435,12 +441,28 @@
     </div>
     <script>
         function start() {
-        let x = document.getElementById("startcalc");
-        if (x.style.display==="none") {
-        x.style.display="block";
-        } else {
-        x.style.display="none";
+            let x = document.getElementById("startcalc");
+            if (x.style.display==="none" || x.style.display==="") {
+            x.style.display="block";
+            } else {
+            x.style.display="none";
+            }
         }
+        function income() {
+            let x = document.getElementById("in");
+            if (x.style.display==="none" || x.style.display==="") {
+            x.style.display="block";
+            } else {
+            x.style.display="none";
+            }
+        }
+        function expense() {
+            let x = document.getElementById("out1");
+            if (x.style.display==="none" || x.style.display==="") {
+            x.style.display="block";
+            } else {
+            x.style.display="none";
+            }
         }
     </script>
 </body>
