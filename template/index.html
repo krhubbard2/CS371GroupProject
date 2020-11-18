@@ -111,8 +111,8 @@
                                   </form>
                                 </div>
                                 <br>
-                                <button onclick="expense()">Expense 1</button>
-                                <div class="out1" id="out1">
+                                <button onclick = "expenseH()">Expense 1</button>
+                                <div class = "ex1" id = "ex1">
                                   <div class="form-group"> <label
                                       class="col-sm-2 control-label"></label>
                                     <div class="col-sm-10"><strong>Expenses
@@ -233,7 +233,9 @@
                                     </div>
                                   </div>
                                 </div>
-                                <!--div for expense button--> <br>
+                                <br>
+                                <button onclick = "expenseI()">Expense 2</button>
+                                <div class = "ex2" id = "ex2">
                                 <div class="form-group"> <label
                                     class="col-sm-2 control-label"></label>
                                   <div class="col-sm-10"> <strong>Expenses
@@ -277,7 +279,10 @@
                                       class="form-control" type="text">
                                   </div>
                                 </div>
+                              </div>
                                 <br>
+                                <button onclick = "expenseF()">Expense 3</button>
+                                <div class = "ex3" id = "ex3">
                                 <div class="form-group"> <label
                                     class="col-sm-2 control-label"></label>
                                   <div class="col-sm-10"> <strong>Expenses
@@ -319,7 +324,10 @@
                                       class="form-control" type="text">
                                   </div>
                                 </div>
+                              </div>
                                 <br>
+                                <button onclick = "expenseO()">Expense 4</button>
+                                <div class = "ex4" id = "ex4">
                                 <div class="form-group"> <label
                                     class="col-sm-2 control-label"></label>
                                   <div class="col-sm-10"> <strong>Expenses
@@ -400,6 +408,7 @@
                                       class="form-control" type="text">
                                   </div>
                                 </div>
+                              </div>
                                 <div class="form-group"> <label
                                     class="col-sm-2 control-label"></label>
                                   <div class="col-sm-offset-2 col-sm-10">
@@ -481,6 +490,10 @@ padding: 10px auto
 .comment_list {
 padding-left: 60px;
 }
+.startcalc, .in, .ex1, .ex2, .ex3, .ex4 {
+  display: none;
+}
+
 </style> </div>
                               </div>
                             </div>
@@ -509,8 +522,32 @@ x.style.display="block";
 x.style.display="none";
 }
 }
-function expense() {
-let x = document.getElementById("out1");
+function expenseH() {
+let x = document.getElementById("ex1");
+if (x.style.display==="none" || x.style.display==="") {
+x.style.display="block";
+} else {
+x.style.display="none";
+}
+}
+function expenseI() {
+let x = document.getElementById("ex2");
+if (x.style.display==="none" || x.style.display==="") {
+x.style.display="block";
+} else {
+x.style.display="none";
+}
+}
+function expenseF() {
+let x = document.getElementById("ex3");
+if (x.style.display==="none" || x.style.display==="") {
+x.style.display="block";
+} else {
+x.style.display="none";
+}
+}
+function expenseO() {
+let x = document.getElementById("ex4");
 if (x.style.display==="none" || x.style.display==="") {
 x.style.display="block";
 } else {
@@ -643,7 +680,7 @@ x.style.display="none";
 
         | <a href="suggestions.html">Suggestions</a> | <a
           href="about_us.html">About Us</a><br>
-        Kelby Hubbard, Yali Wang, and Rose Peters © UAF Fall 2020<br>
+        Kelby Hubbard, Yali Wang, and Rose Peters ï¿½ UAF Fall 2020<br>
         <a href="http://www.winkhosting.com" title="Hosting Colombia">Hosting
 
 
