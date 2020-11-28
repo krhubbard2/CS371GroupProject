@@ -1,39 +1,728 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="author" content="Wink Hosting (www.winkhosting.com)">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <link rel="stylesheet" href="images/style.css" type="text/css">
     <title>Budget Calculator</title>
-    <style type="text/css">
-        .demo{
-            display: flex;
-            border:solid 2px orange;
-        }
-        .demo-center{
-            justify-content:flex-start;
-        }
-        .demo-start{
-            justify-content:center;
-        }
-        .demo-end{
-            justify-content:flex-end;
-        }
-        .item{
-            background-color: cornflowerblue;
-            border: solid 1px black;
-            color: white;
-            padding: 20px;
-        }
-        
-    </style>
+  </head>
+  <body>
+    <div id="page" align="center">
+      <div id="toppage" align="center">
+        <div id="date">
+          <div class="smalltext" style="padding:13px;">CS371 Fall 2020<br>
+          </div>
+        </div>
+        <div id="topbar">
+          <div style="padding:12px;" class="smallwhitetext"
+            align="right">&nbsp;<br>
+          </div>
+        </div>
+      </div>
+      <div id="header" align="center">
+        <div class="titletext" id="logo">
+          <div class="logotext" style="margin:10px">Budget<br>
+            Calculator <br>
+          </div>
+        </div>
+        <div id="pagetitle">
+          <div id="title" class="titletext" style="left: 42px; width:
+            556px;" align="right">Budget Calculator<br>
+          </div>
+        </div>
+      </div>
+      <div id="content" align="center">
+        <div id="menu" align="right">
+          <div style="width:189px; height:8px;" align="right"><img
+              src="images/mnu_topshadow.gif" alt="mnutopshadow"
+              width="189" height="8"></div>
+          <div id="linksmenu" align="center"> <a href="index.html"
+              title="Home">Home</a> <a href="analysis.html"
+              title="About Us">Analysis</a> <a
+              href="https://github.com/krhubbard2/CS371GroupProject/issues"
+              title="Products">Suggestions</a> <a href="about_us.html"
+              title="Our Services">About Us</a>&nbsp; </div>
+          <div style="width:189px; height:8px;" align="right"><img
+              src="images/mnu_bottomshadow.gif" alt="mnubottomshadow"
+              width="189" height="8"></div>
+        </div>
+        <div id="contenttext">
+          <div class="bodytext" style="padding:12px;" align="justify"> <strong></strong><br>
+            <button onclick="start()" class="button"> Start budget
+              calculator</button>
+            <div class="startcalc" id="startcalc">
+              <div class="container" style="margin-top: 80px;">
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="panel panel-black">
+                      <div class="panel-heading">
+                        <div class="container" style="margin:0 auto;">
+                          <div class="row">
+                            <div class="col-md-12" style="text-align:
+                              left">
+                              <div class="panel-body panel-app"> <button
+                                  onclick="income()" class="innerbutton">Income</button>
+                                <div class="in" id="in">
+                                  <form name="form1"
+                                    class="form-horizontal" role="form">
+                                    <div class="form-group"> <label
+                                        class="col-sm-2 control-label"></label>
+                                      <div class="col-sm-10"> <strong>Income</strong>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="col-sm-4"> <label
+                                          class="col-sm-2 control-label">Salary/Wages</label>
+                                      </div>
+                                      <div class="col-sm-5"> <input
+                                          id="cu1" input=""
+                                          placeholder="10,100,1000"
+                                          name="income"
+                                          class="form-control"
+                                          type="text"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="col-sm-4"> <label
+                                          class="col-sm-2 control-label">Government
+                                          Benefits</label> </div>
+                                      <div class="col-sm-5"> <input
+                                          id="cu2" input=""
+                                          placeholder="10,100,1000"
+                                          name="benefits"
+                                          class="form-control"
+                                          type="text"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="col-sm-4"> <label
+                                          class="col-sm-2 control-label">Other
+                                          Income</label> </div>
+                                      <div class="col-sm-5"> <input
+                                          id="cu3" input=""
+                                          placeholder="10,100,1000"
+                                          name="otherincome"
+                                          class="form-control"
+                                          type="text"> </div>
+                                    </div>
+                                  </form>
+                                </div>
+                                <br>
+                                <button onclick="expenseH()"
+                                  class="innerbutton">Expense 1</button>
+                                <div class="ex1" id="ex1">
+                                  <div class="form-group"> <label
+                                      class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10"><strong>Expenses
+                                        - Housing</strong></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Mortgages</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu5" input=""
+                                        placeholder="10,100,1000"
+                                        name="mortgages"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Property
+                                        Taxes</label> </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu6" input=""
+                                        placeholder="10,100,1000"
+                                        name="property"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Rent</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu7" input=""
+                                        placeholder="10,100,1000"
+                                        name="rent" class="form-control"
+                                        type="text"> </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Electricity</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu8" input=""
+                                        placeholder="10,100,1000"
+                                        name="electricity"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Telephone</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu9" input=""
+                                        placeholder="10,100,1000"
+                                        name="telephone"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Cable</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu10" input=""
+                                        placeholder="10,100,1000"
+                                        name="cable"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Internet</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu11" input=""
+                                        placeholder="10,100,1000"
+                                        name="internet"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Water</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu12" input=""
+                                        placeholder="10,100,1000"
+                                        name="water"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Heat</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu13" input=""
+                                        placeholder="10,100,1000"
+                                        name="heat" class="form-control"
+                                        type="text"> </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Others</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu14" input=""
+                                        placeholder="10,100,1000"
+                                        name="otherhousing"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <br>
+                                <button onclick="expenseI()"
+                                  class="innerbutton">Expense 2</button>
+                                <div class="ex2" id="ex2">
+                                  <div class="form-group"> <label
+                                      class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10"> <strong>Expenses
+                                        - Insurance</strong> </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Auto
+                                        Insurance</label> </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu16" input=""
+                                        placeholder="10,100,1000"
+                                        name="auto" class="form-control"
+                                        type="text"> </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Health
+                                        Insurance</label> </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu17" input=""
+                                        placeholder="10,100,1000"
+                                        name="health"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Others</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu18" input=""
+                                        placeholder="10,100,1000"
+                                        name="otherinsurance"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <br>
+                                <button onclick="expenseF()"
+                                  class="innerbutton">Expense 3</button>
+                                <div class="ex3" id="ex3">
+                                  <div class="form-group"> <label
+                                      class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10"> <strong>Expenses
+                                        - Food</strong> </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Supermarket</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu20" input=""
+                                        placeholder="10,100,1000"
+                                        name="supermarket"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Restaurants</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu21" input=""
+                                        placeholder="10,100,1000"
+                                        name="restaurants"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Others</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu22" input=""
+                                        placeholder="10,100,1000"
+                                        name="otherfood"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <br>
+                                <button onclick="expenseO()"
+                                  class="innerbutton">Expense 4</button>
+                                <div class="ex4" id="ex4">
+                                  <div class="form-group"> <label
+                                      class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10"> <strong>Expenses
+                                        - Other</strong> </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Credit
+                                        Card</label> </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu24" input=""
+                                        placeholder="10,100,1000"
+                                        name="creditcard"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Medical
+                                        / Dental</label> </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu25" input=""
+                                        placeholder="10,100,1000"
+                                        name="medical"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Clothing</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu26" input=""
+                                        placeholder="10,100,1000"
+                                        name="clothing"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Transportation</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu27" input=""
+                                        placeholder="10,100,1000"
+                                        name="transportation"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Education
+                                        (Tuition)</label> </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu28" input=""
+                                        placeholder="10,100,1000"
+                                        name="education"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-4"> <label
+                                        class="col-sm-2 control-label">Others</label>
+                                    </div>
+                                    <div class="col-sm-5"> <input
+                                        id="cu29" input=""
+                                        placeholder="10,100,1000"
+                                        name="otherother"
+                                        class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group"> <label
+                                    class="col-sm-2 control-label"></label>
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <input value="Calculate" onclick="calcbudget(this.form)" class="btn_btn-primary" type="button">
+                                    <input value="Clear" class=" btn_btn-primary" type="reset">
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                  <div class="col-sm-4"> <label
+                                      class="col-sm-2 control-label">Total
+                                      Income</label> </div>
+                                  <div class="col-sm-5"> <input
+                                      id="cu31" input=""
+                                      placeholder="10,100,1000"
+                                      name="result1"
+                                      class="form-control" type="text">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-4"> <label
+                                      class="col-sm-2 control-label">Total
+                                      Expenses</label> </div>
+                                  <div class="col-sm-5"> <input
+                                      id="cu32" input=""
+                                      placeholder="10,100,1000"
+                                      name="result2"
+                                      class="form-control" type="text">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-4"> <label
+                                      class="col-sm-2 control-label">Your
+                                      Balance</label> </div>
+                                  <div class="col-sm-5"> <input
+                                      id="cu33" input=""
+                                      placeholder="10,100,1000"
+                                      name="result3"
+                                      class="form-control" type="text">
+                                  </div>
+                                </div>
+                                <div class="panel-body">
+                                  <p style="border-bottom: 1px
+                                    dashed#dddddd; margin-bottom: 20px">&nbsp;</p>
+                                  <style>
+                                                                    .red {
+                                                                        color: #f00;
+                                                                        font-size: 16px;
+                                                                    }
+                                                                    
+                                                                    .comment {
+                                                                        margin: 15px 0px 0px 50px
+                                                                    }
+                                                                    
+                                                                    .reply_list {
+                                                                        margin: 15px auto
+                                                                    }
+                                                                    
+                                                                    .reply_title {
+                                                                        display: block;
+                                                                        padding: 15px;
+                                                                        border-bottom: 1px solid #ddd
+                                                                    }
+                                                                    
+                                                                    .reply_cnt {
+                                                                        padding: 20px
+                                                                    }
+                                                                    
+                                                                    .reply_button {
+                                                                        padding: 10px auto
+                                                                    }
+                                                                    
+                                                                    .comment_list {
+                                                                        padding-left: 60px;
+                                                                    }
+                                                                    
+                                                                    .startcalc,
+                                                                    .in,
+                                                                    .ex1,
+                                                                    .ex2,
+                                                                    .ex3,
+                                                                    .ex4 {
+                                                                        display: none;
+                                                                    }
+                                                                    
+                                                                    .button {
+                                                                        background-color: rgb(121, 150, 67);
+                                                                        color: white;
+                                                                        border: none;
+                                                                        padding: 16px 32px;
+                                                                        text-align: center;
+                                                                        text-decoration: none;
+                                                                        display: inline-block;
+                                                                        font-size: 16px;
+                                                                        transition-duration: 0.2s;
+                                                                    }
+                                                                    
+                                                                    .button:hover,
+                                                                    .innerbutton:hover {
+                                                                        background-color: rgb(95, 119, 51);
+                                                                        color: white;
+                                                                        cursor: pointer;
+                                                                    }
+                                                                    
+                                                                    .innerbutton {
+                                                                        background-color: rgb(121, 150, 67);
+                                                                        color: white;
+                                                                        border: none;
+                                                                        padding: 8px 16px;
+                                                                        margin: 2px;
+                                                                        text-align: center;
+                                                                        text-decoration: none;
+                                                                        display: inline-block;
+                                                                        font-size: 16px;
+                                                                        transition-duration: 0.2s;
+                                                                    }
+                                                                    
+                                                                    .btn_btn-primary {
+                                                                        background-color: rgb(150, 67, 143);
+                                                                        color: white;
+                                                                        border: none;
+                                                                        padding: 8px 16px;
+                                                                        text-align: center;
+                                                                        text-decoration: none;
+                                                                        display: inline-block;
+                                                                        font-size: 16px;
+                                                                        transition-duration: 0.2s;
+                                                                    }
+                                                                    
+                                                                    .btn_btn-primary:hover {
+                                                                        background-color: rgb(112, 50, 108);
+                                                                        color: white;
+                                                                        cursor: pointer;
+                                                                    }
+                                                                </style>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+                        function start() {
+                            let x = document.getElementById("startcalc");
+                            if (x.style.display === "none" || x.style.display === "") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
 
-</head>
-<body style="background-color:BlanchedAlmond;">
-    <h1>Home</h1>
-    <div class="demo demo-center">
-        <div class="item" style="width:340px"><a href="index.html" target="_self" rel="noopener noreferrer">Home</a></div>
-        <div class="item" style="width:340px"><a href="calculator.html" target="_self" rel="noopener noreferrer">Calculator</a></div>
-        <div class="item" style="width:340px"><a href="analysis.html" target="_self" rel="noopener noreferrer">Analysis</a></div>
-        <div class="item" style="width:340px"><a href="suggestions.html" target="_self" rel="noopener noreferrer">Suggestions</a></div>
-        <div class="item" style="width:340px"><a href="about_us.html" target="_self" rel="noopener noreferrer">About Us</a></div>
+                        function income() {
+                            let x = document.getElementById("in");
+                            if (x.style.display === "none" || x.style.display === "") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+
+                        function expenseH() {
+                            let x = document.getElementById("ex1");
+                            if (x.style.display === "none" || x.style.display === "") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+
+                        function expenseI() {
+                            let x = document.getElementById("ex2");
+                            if (x.style.display === "none" || x.style.display === "") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+
+                        function expenseF() {
+                            let x = document.getElementById("ex3");
+                            if (x.style.display === "none" || x.style.display === "") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+
+                        function expenseO() {
+                            let x = document.getElementById("ex4");
+                            if (x.style.display === "none" || x.style.display === "") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+                    </script> <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="smallgraytext" align="center"> <a
+          href="index.html">Home</a> | <a href="analysis.html">Analysis</a>&nbsp;
+        | <a
+          href="https://github.com/krhubbard2/CS371GroupProject/issues">Suggestions</a>
+        | <a href="about_us.html">About Us</a><br>
+        Kelby Hubbard, Yali Wang, and Rose Peters � UAF Fall 2020<br>
+        <a href="http://www.winkhosting.com" title="Hosting Colombia">Hosting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          Colombia</a><br>
+      </div>
     </div>
-</body>
-</html> 
+  </body>
+</html>
